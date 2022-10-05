@@ -1,0 +1,4 @@
+{
+  "path": "@commitlint/cz-commitlint",
+  "useEmoji": true
+}
