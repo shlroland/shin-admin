@@ -1,5 +1,8 @@
 lockfileVersion: 5.4
 
+onlyBuiltDependencies:
+  - git-hook-pure
+
 specifiers:
   '@commitlint/cli': 16.2.1
   '@commitlint/config-conventional': 16.2.1
@@ -16,7 +19,7 @@ specifiers:
   '@vitejs/plugin-vue': ^3.1.0
   commitizen: ^4.2.5
   eslint: 8.10.0
-  git-hook-pure: 3.2.0
+  husky: ^8.0.0
   lint-staged: 12.3.4
   prettier: 2.5.1
   quasar: ^2.9.1
@@ -32,6 +35,7 @@ specifiers:
 
 dependencies:
   '@quasar/extras': 1.15.4
+  quasar: 2.9.1
   vue: 3.2.40
 
 devDependencies:
@@ -42,17 +46,16 @@ devDependencies:
   '@shlroland/commitizen-config': 0.1.2_kgfpwbszye5lxxsaes4plc27mi
   '@shlroland/commitlint-config': 0.1.2_sq4xuutkx2fgb6qu543vsghxge
   '@shlroland/eslint-config': 0.1.2_on53ifglkfsqidn75zoqtmorxy
-  '@shlroland/git-hooks': 1.0.1_git-hook-pure@3.2.0
+  '@shlroland/git-hooks': 1.0.1_git-hook-pure@3.2.1
   '@shlroland/lint-staged': 1.0.1_lint-staged@12.3.4
   '@shlroland/prettier-config': 0.1.1_prettier@2.5.1
   '@shlroland/stylelint-config': 1.0.1_nv32jmddn6lqbuzdngqbvo3mim
   '@vitejs/plugin-vue': 3.1.2_vite@3.1.4+vue@3.2.40
   commitizen: 4.2.5
   eslint: 8.10.0
-  git-hook-pure: 3.2.0
+  husky: 8.0.1
   lint-staged: 12.3.4
   prettier: 2.5.1
-  quasar: 2.9.1
   sass: 1.32.0
   stylelint: 14.5.3
   stylelint-config-prettier: 9.0.3_stylelint@14.5.3
@@ -355,7 +358,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm]
     os: [android]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -364,7 +366,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [loong64]
     os: [linux]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -578,12 +579,12 @@ packages:
       - typescript
     dev: true
 
-  /@shlroland/git-hooks/1.0.1_git-hook-pure@3.2.0:
+  /@shlroland/git-hooks/1.0.1_git-hook-pure@3.2.1:
     resolution: {integrity: sha512-O2EeSxOZu7KdqMpaVPYKKTUXf4cMfvDqgCsmw1XiDbb4x6SVjRsncbIoxIF8uyzfKkKO/2sNI6RW0JmgaWFu9g==}
     peerDependencies:
       git-hook-pure: ^3.2.0
     dependencies:
-      git-hook-pure: 3.2.0
+      git-hook-pure: 3.2.1
     dev: true
 
   /@shlroland/lint-staged/1.0.1_lint-staged@12.3.4:
@@ -1704,7 +1705,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [android]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1713,7 +1713,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [android]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1722,7 +1721,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [darwin]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1731,7 +1729,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [darwin]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1740,7 +1737,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [freebsd]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1749,7 +1745,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [freebsd]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1758,7 +1753,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [linux]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1767,7 +1761,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [linux]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1776,7 +1769,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm]
     os: [linux]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1785,7 +1777,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [linux]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1794,7 +1785,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [mips64el]
     os: [linux]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1803,7 +1793,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [ppc64]
     os: [linux]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1812,7 +1801,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [riscv64]
     os: [linux]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1821,7 +1809,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [s390x]
     os: [linux]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1830,7 +1817,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [netbsd]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1839,7 +1825,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [openbsd]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1848,7 +1833,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [sunos]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1857,7 +1841,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [win32]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1866,7 +1849,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1875,7 +1857,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [win32]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -1883,7 +1864,6 @@ packages:
     resolution: {integrity: sha512-N7wBhfJ/E5fzn/SpNgX+oW2RLRjwaL8Y0ezqNqhjD6w0H2p0rDuEz2FKZqpqLnO8DCaWumKe8dsC/ljvVSSxng==}
     engines: {node: '>=12'}
     hasBin: true
-    requiresBuild: true
     optionalDependencies:
       '@esbuild/android-arm': 0.15.10
       '@esbuild/linux-loong64': 0.15.10
@@ -2492,7 +2472,6 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
-    requiresBuild: true
     dev: true
     optional: true
 
@@ -2549,8 +2528,8 @@ packages:
       get-intrinsic: 1.1.3
     dev: true
 
-  /git-hook-pure/3.2.0:
-    resolution: {integrity: sha512-ocn6O+99LoviaqL7Vn6/IuQAlkCjscBRKYw5Hw3XiYhvZjYgilE7+CsvOLR6tNh/84ho/2AYIUh3WUvNVPImVw==}
+  /git-hook-pure/3.2.1:
+    resolution: {integrity: sha512-EWWBXLnZUxTvC6abOkkgDEMeJcfmA1OdmGXJxfJOclRbJHdg3ACP/YO6wh7uyxjpa83d6Z0v3PAvD4Oym9tORg==}
     requiresBuild: true
     dev: true
 
@@ -2740,6 +2719,12 @@ packages:
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+    dev: true
+
+  /husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /iconv-lite/0.4.24:
@@ -3663,7 +3648,6 @@ packages:
   /quasar/2.9.1:
     resolution: {integrity: sha512-8IxD7tPbkBLibrtwHbveagB8tAzE7AG0u8UffGNdUEb5tnWRMh9PAr+DcnMYfax0C5pjvlvzxwIjm+axKg6GTg==}
     engines: {node: '>= 10.18.1', npm: '>= 6.13.4', yarn: '>= 1.21.1'}
-    dev: true
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
