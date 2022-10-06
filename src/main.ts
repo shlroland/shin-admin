@@ -1,5 +1,18 @@
 import { createApp } from 'vue'
-import './style.css'
+import { Quasar } from 'quasar'
 import App from './App.vue'
+// Import icon libraries
+import '@quasar/extras/material-icons/material-icons.css'
 
-createApp(App).mount('#app')
+// Import Quasar css
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'quasar/src/css/index.sass'
+import './styles/quasar-variables.sass'
+
+const app = createApp(App)
+
+app.use(Quasar, {
+  plugins: {}, // import Quasar plugins and add here
+})
+
+app.mount('#app')

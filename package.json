@@ -9,12 +9,15 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "@quasar/extras": "^1.15.4",
+    "quasar": "^2.9.1",
     "vue": "^3.2.37"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.1",
     "@commitlint/config-conventional": "16.2.1",
     "@commitlint/cz-commitlint": "^17.1.2",
+    "@quasar/vite-plugin": "^1.2.3",
     "@shlroland/commitizen-config": "0.1.2",
     "@shlroland/commitlint-config": "0.1.2",
     "@shlroland/eslint-config": "0.1.2",
@@ -28,6 +31,7 @@
     "git-hook-pure": "3.2.0",
     "lint-staged": "12.3.4",
     "prettier": "2.5.1",
+    "sass": "1.32.0",
     "stylelint": "14.5.3",
     "stylelint-config-prettier": "9.0.3",
     "stylelint-config-standard": "25.0.0",
