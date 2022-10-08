@@ -5,5 +5,6 @@ module.exports = {
       'error',
       { devDependencies: ['*.config.*', 'config/*'] },
     ],
+    'react-hooks/rules-of-hooks': 'off',
   },
 }
