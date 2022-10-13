@@ -5,4 +5,8 @@ export const routes: RouteRecordRaw[] = [
     path: '/',
     component: () => import('../layouts/MainLayout.vue'),
   },
+  {
+    path: '/:catchAll(.*)*',
+    component: () => import('pages/Error404.vue'),
+  },
 ]

@@ -6,5 +6,6 @@ module.exports = {
       { devDependencies: ['*.config.*', 'config/*'] },
     ],
     'react-hooks/rules-of-hooks': 'off',
+    'import/no-default-export': 'off',
   },
 }
