@@ -6,7 +6,11 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('../layouts/MainLayout.vue'),
   },
   {
+    path: '/login',
+    component: () => import('../pages/Login/index.vue'),
+  },
+  {
     path: '/:catchAll(.*)*',
-    component: () => import('pages/Error404.vue'),
+    component: () => import('../pages/Error404.vue'),
   },
 ]

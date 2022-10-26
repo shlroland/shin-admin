@@ -7,5 +7,6 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'off',
     'import/no-default-export': 'off',
+    'import/first': 'off',
   },
 }
