@@ -10,23 +10,35 @@
           </q-card-section>
           <q-card-section>
             <div class="text-center q-pt-lg">
-              <div class="col text-h6 ellipsis">Log in</div>
+              <div class="col text-h6 ellipsis">
+                {{ isRegisterMode ? '注册' : '登录' }}
+              </div>
             </div>
           </q-card-section>
           <q-card-section>
-            <q-form class="q-gutter-md">
-              <q-input v-model="username" filled label="Username" lazy-rules />
-
-              <q-input
-                v-model="password"
-                type="password"
-                filled
-                label="Password"
-                lazy-rules
-              />
-
-              <div>
-                <q-btn label="Login" to="/" type="button" color="primary" />
+            <q-form ref="form" class="q-gutter-md" @submit="submit">
+              <LoginForm v-if="!isRegisterMode" v-model="formValue" />
+              <RegisterForm v-else v-model="formValue" />
+              <div class="row">
+                <q-btn
+                  :label="isRegisterMode ? '注册' : '登录'"
+                  type="submit"
+                  color="primary"
+                />
+                <q-space />
+                <q-btn
+                  label="注册"
+                  type="button"
+                  color="primary"
+                  flat
+                  @click="
+                    () => {
+                      isRegisterMode = !isRegisterMode
+                      form?.resetValidation()
+                      form?.reset()
+                    }
+                  "
+                />
               </div>
             </q-form>
           </q-card-section>
@@ -43,11 +55,21 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
+import type { QForm } from 'quasar'
 import ProfileSvg from './profile.svg?url'
+import RegisterForm from './RegisterForm.vue'
+import LoginForm from './LoginForm.vue'
 
-const username = ref('')
-const password = ref('')
+const form = ref<QForm>()
+const isRegisterMode = ref(false)
+const formValue = reactive({
+  username: '',
+  password: '',
+  repeartPassword: '',
+})
+
+const submit = async () => {}
 </script>
 
 <style>
